@@ -9,11 +9,13 @@ $(document).ready(function () {
 
         for (var i = 0; i < workingHours.length; i++) {
 
-            var row = $("<div class='row'>"); //created a dinamyc row
+            //column one
+
+            var row = $("<div class='row'>");
             var colOne = $("<div class='col-md-3'> ");
 
             var showHours = workingHours[i] + " a.m.";
-            //console.log(showHours);
+
 
             if (workingHours[i] >= 12) {
                 showHours = workingHours[i] + " p.m.";
@@ -21,9 +23,11 @@ $(document).ready(function () {
                     showHours = workingHours[i] - 12 + " p.m.";
                 }
             }
-            //console.log(showHours);
+
 
             colOne.append(showHours);
+
+            //column two
 
             var colTwo = $("<div class='col-md-6'> ");
             var textArea = $("<textarea>");
@@ -42,13 +46,19 @@ $(document).ready(function () {
                 textArea.addClass("bg-success");
             }
 
-
-
-
             colTwo.append(textArea);
 
-            row.append(colOne, colTwo);
+            //column 3
+
+            var row = $("<div class='row'>");
+            var colThree = $("<div class='col-md-3'> ");
+
+            row.append(colOne, colTwo, colThree);
             $("#planner").append(row);
+
+
+
+
 
         }
 
@@ -76,12 +86,14 @@ $(document).ready(function () {
 
 
 
+
     //displays current date and time
 
-    // var dt = new Date(); var time = dt
-    // var currentdate = new Date(); var datetime = "Now: " + currentdate;
+    var dt = new Date(); var time = dt
+    var currentdate = new Date(); var datetime = "Now: " + currentdate;
 
-    // $("#currentDay").html(currentdate)
+
+    $("#currentDay").html(currentdate)
 
 
 })
