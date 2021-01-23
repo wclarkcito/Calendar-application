@@ -12,7 +12,7 @@ $(document).ready(function () {
             //column one
 
             var row = $("<div class='row'>");
-            var colOne = $("<div class='col-md-3'> ");
+            var colOne = $("<div class='col-md-1'> ");
 
             var showHours = workingHours[i] + " a.m.";
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
 
             //column two
 
-            var colTwo = $("<div class='col-md-6'> ");
+            var colTwo = $("<div class='col-md-10'> ");
             var textArea = $("<textarea>");
             textArea.attr("id", "textarea" + i);
             textArea.addClass("form-control");
@@ -51,7 +51,15 @@ $(document).ready(function () {
             //column 3
 
             var row = $("<div class='row'>");
-            var colThree = $("<div class='col-md-3'> ");
+            var colThree = $("<div class='col-md-1'> ");
+            var saveButton = $("<button>");
+            saveButton.addClass("btn btn-dark btn-lg normal-button")
+            colThree.append(saveButton);
+
+            $(saveButton).click(function () {
+                console.log(saveButton);
+
+            })
 
             row.append(colOne, colTwo, colThree);
             $("#planner").append(row);
