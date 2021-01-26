@@ -62,8 +62,10 @@ $(document).ready(function () {
             $(saveButton).click(function (event) {
                 event.preventDefault();
                 //console.log(saveButton);
-                for (i = 0; i < textArea + i; i++) {
-                    console.log([i])
+                var textAreas = $("textarea");
+                for (i = 0; i < textAreas.length; i++) {
+                    console.log($(textAreas[i]).val(), i)
+
                 }
 
 
