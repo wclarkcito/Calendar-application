@@ -62,11 +62,15 @@ $(document).ready(function () {
             $(saveButton).click(function (event) {
                 event.preventDefault();
                 //console.log(saveButton);
+                //array of <textarea> elements
                 var textAreas = $("textarea");
                 for (i = 0; i < textAreas.length; i++) {
                     console.log($(textAreas[i]).val(), i)
+                    localStorage.setItem("textarea", (textAreas).val(), i)
+
 
                 }
+
 
 
 
