@@ -55,9 +55,10 @@ $(document).ready(function () {
             //column 3
 
             var row = $("<div class='row'>");
-            var colThree = $("<div class='col-md-1'> ");
+            var colThree = $("<div class='col-md-1'>");
             var saveButton = $("<button>");
-            saveButton.addClass("btn btn-dark btn-lg form-control");
+            saveButton.addClass("btn btn-dark btn-lg primary  saveButton");
+            $(saveButton).text("Save")
             colThree.append(saveButton);
 
             //save button for values of textareas
