@@ -57,7 +57,7 @@ $(document).ready(function () {
             var row = $("<div class='row'>");
             var colThree = $("<div class='col-md-1'>");
             var saveButton = $("<button>");
-            saveButton.addClass("btn btn-dark btn-lg primary  saveButton");
+            saveButton.addClass("btn btn-dark btn-lg primary saveButton");
             $(saveButton).text("Save")
             colThree.append(saveButton);
 
