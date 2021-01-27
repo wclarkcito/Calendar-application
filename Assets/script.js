@@ -61,65 +61,51 @@ $(document).ready(function () {
 
             $(saveButton).click(function (event) {
                 event.preventDefault();
-                //console.log(saveButton);
+                console.log(saveButton)
                 //array of <textarea> elements
                 var textAreas = $("textarea");
+                var textvalues = [];
                 for (i = 0; i < textAreas.length; i++) {
+                    textvalues.push($(textAreas[i]).val())
                     console.log($(textAreas[i]).val(), i)
-                    localStorage.setItem("textarea", (textAreas).val(), i)
+                    //set variable into local storage
 
+
+                    localStorage.setItem('textareas', JSON.stringify(textvalues));
 
                 }
-
+                console.log(textvalues)
 
 
 
             })
 
 
-
-
-
-
-            //var test = $(this).parent().prev().first().first().val();
-            //console.log(test)
-            //console.log(this);
-            //localStorage.setItem("textarea", saveButton);
-            //console.log(saveButton);
-
-            //localStorage.setItem("textarea", JSON.stringify());
-
-
-
-
-
-            //localStorage.setItem("textarea", textArea.value);
-
-
-
-
-
-
-
-
             row.append(colOne, colTwo, colThree);
             $("#planner").append(row);
-
-
-
-
 
         }
 
 
+        //retrieves save data from local storage 
+    }
+    function loadData() {
+        var data = JSON.parse(localStorage.getItem('textareas'));
+        console.log(data)
+        var textAreas = $("textarea");
+        console.log(textAreas)
+        for (i = 0; i < textAreas.length; i++) {
+            textAreas[i].value = data[i]
+        }
 
     }
 
 
 
 
-
     showTime();
+    loadData()
+    //localStorage.clear()
 
 });
 
