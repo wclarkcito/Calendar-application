@@ -8,6 +8,7 @@ $(document).ready(function () {
 
 
     function showTime() {
+        //loops through the working hours variable to create columns
 
         for (var i = 0; i < workingHours.length; i++) {
 
@@ -36,7 +37,8 @@ $(document).ready(function () {
             textArea.attr("id", "textarea" + i);
             textArea.addClass("form-control");
 
-            //console.log(textArea);
+            //conditionals for past present and future color coding of textareas
+
             if (presentHour > workingHours[i]) {
                 textArea.addClass('bg-secondary');
             }
@@ -58,6 +60,7 @@ $(document).ready(function () {
             saveButton.addClass("btn btn-dark btn-lg form-control");
             colThree.append(saveButton);
 
+            //save button for values of textareas
 
             $(saveButton).click(function (event) {
                 event.preventDefault();
@@ -74,7 +77,7 @@ $(document).ready(function () {
                     localStorage.setItem('textareas', JSON.stringify(textvalues));
 
                 }
-                console.log(textvalues)
+                //console.log(textvalues)
 
 
 
@@ -105,7 +108,7 @@ $(document).ready(function () {
 
     showTime();
     loadData()
-    //localStorage.clear()
+
 
 });
 
